@@ -4,11 +4,22 @@ import React, { useRef, useEffect } from 'react';
 interface ProductCardProps {
   title: string;
   description: string;
-  icon: React.ReactNode;
+  icon?: React.ReactNode;
+  imageSrc?: string;
+  imageAlt?: string;
   delay?: number;
+  featured?: boolean;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ title, description, icon, delay = 0 }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ 
+  title, 
+  description, 
+  icon, 
+  imageSrc, 
+  imageAlt, 
+  delay = 0,
+  featured = false
+}) => {
   const cardRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
@@ -40,12 +51,22 @@ const ProductCard: React.FC<ProductCardProps> = ({ title, description, icon, del
   return (
     <div 
       ref={cardRef}
-      className="animate-on-scroll bg-white p-6 rounded-xl shadow-md card-hover border border-gray-100"
+      className={`animate-on-scroll bg-white p-6 rounded-xl shadow-md card-hover border border-gray-100 ${featured ? 'lg:p-8' : ''}`}
     >
-      <div className="h-14 w-14 mb-4 bg-gradient-to-br from-om-green-light to-om-blue-light rounded-lg flex items-center justify-center text-white">
-        {icon}
-      </div>
-      <h3 className="text-xl font-semibold mb-2">{title}</h3>
+      {imageSrc ? (
+        <div className={`mb-6 overflow-hidden rounded-lg ${featured ? 'h-48 md:h-64' : 'h-40'}`}>
+          <img 
+            src={imageSrc} 
+            alt={imageAlt || title} 
+            className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+          />
+        </div>
+      ) : (
+        <div className="h-14 w-14 mb-4 bg-gradient-to-br from-om-green-light to-om-blue-light rounded-lg flex items-center justify-center text-white">
+          {icon}
+        </div>
+      )}
+      <h3 className={`font-semibold mb-2 ${featured ? 'text-2xl' : 'text-xl'}`}>{title}</h3>
       <p className="text-gray-600">{description}</p>
     </div>
   );

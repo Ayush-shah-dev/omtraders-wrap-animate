@@ -43,27 +43,21 @@ const Hero = () => {
           
           <div className="animate-on-scroll flex justify-center">
             <div className="relative w-full max-w-md">
-              {/* Main circular background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-om-green-light/30 to-om-blue-light/30 rounded-full blur-3xl transform -translate-x-4 translate-y-4"></div>
-              
-              {/* Animated decorative elements */}
-              <div className="absolute top-1/4 right-1/4 w-20 h-20 bg-om-green-light/40 rounded-full animate-float" style={{ animationDelay: '0.5s' }}></div>
-              <div className="absolute bottom-1/4 left-1/3 w-16 h-16 bg-om-blue-light/40 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
-              
-              {/* Product illustration placeholder */}
-              <div className="relative bg-white p-6 rounded-xl shadow-xl card-hover">
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-gray-100 p-4 rounded-lg flex items-center justify-center">
-                    <span className="text-4xl text-om-green-dark">POF</span>
-                  </div>
-                  <div className="bg-gray-100 p-4 rounded-lg flex items-center justify-center">
-                    <span className="text-4xl text-om-blue-dark">BOPP</span>
-                  </div>
-                  <div className="bg-gray-100 p-4 rounded-lg flex items-center justify-center">
-                    <span className="text-4xl text-om-green">PVC</span>
-                  </div>
-                  <div className="bg-gray-100 p-4 rounded-lg flex items-center justify-center">
-                    <span className="text-4xl text-om-blue">LD</span>
+              {/* Founder's image with elegant framing */}
+              <div className="relative">
+                {/* Background decoration */}
+                <div className="absolute -inset-4 bg-gradient-to-br from-om-green-light/30 to-om-blue-light/30 rounded-full blur-3xl transform -translate-x-4 translate-y-4"></div>
+                
+                {/* Founder's image */}
+                <div className="relative bg-white p-2 rounded-xl shadow-xl overflow-hidden card-hover">
+                  <img 
+                    src="/lovable-uploads/7f44aecc-6e7d-4efb-bd1b-ca5af9753aed.png" 
+                    alt="Bhavesh Shah - Founder of OM Traders"
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-lg flex flex-col justify-end p-4">
+                    <span className="text-white text-sm font-medium">Founder</span>
+                    <h3 className="text-white text-xl font-bold">Bhavesh Shah</h3>
                   </div>
                 </div>
               </div>
