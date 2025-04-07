@@ -96,19 +96,7 @@ const Products = () => {
           <path d="M19 5L5 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
         </svg>
       )
-    },
-    {
-      title: "Custom Packaging",
-      description: "Tailored packaging solutions designed for your specific business requirements.",
-      icon: (
-        <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M3 6L12 2L21 6V18L12 22L3 18V6Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M3 6L12 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M12 10L21 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M12 10V22" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      )
-    },
+    }
   ];
 
   return (

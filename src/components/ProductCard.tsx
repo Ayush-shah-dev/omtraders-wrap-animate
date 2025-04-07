@@ -1,5 +1,6 @@
 
 import React, { useRef, useEffect } from 'react';
+import { PhoneIcon } from 'lucide-react';
 
 interface ProductCardProps {
   title: string;
@@ -48,10 +49,18 @@ const ProductCard: React.FC<ProductCardProps> = ({
     };
   }, [delay]);
 
+  const handleWhatsAppClick = () => {
+    const phoneNumber = "919574516060";
+    const message = `Hi, I am interested in ${title}, Please give us quote`;
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <div 
       ref={cardRef}
-      className={`animate-on-scroll relative ${featured ? 'lg:p-8' : ''}`}
+      className={`animate-on-scroll relative ${featured ? 'lg:p-8' : ''} cursor-pointer`}
+      onClick={handleWhatsAppClick}
     >
       {/* Futuristic glowing border effect */}
       <div className="absolute -inset-0.5 bg-gradient-to-r from-om-green to-om-blue rounded-xl opacity-0 group-hover:opacity-50 blur transition duration-500 group-hover:duration-200"></div>
@@ -82,6 +91,12 @@ const ProductCard: React.FC<ProductCardProps> = ({
         </h3>
         
         <p className="text-gray-600 group-hover:text-gray-800 transition-colors duration-300">{description}</p>
+        
+        {/* WhatsApp button indicator */}
+        <div className="mt-4 flex items-center justify-end text-om-green">
+          <span className="text-sm font-medium mr-2">Contact for quote</span>
+          <PhoneIcon size={16} />
+        </div>
         
         {/* Futuristic pseudo-element decoration */}
         <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-om-green to-om-blue group-hover:w-full transition-all duration-500"></div>

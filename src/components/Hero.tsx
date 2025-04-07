@@ -121,15 +121,18 @@ const Hero = () => {
               
               {/* Founder's image */}
               <div className="relative bg-white p-2 rounded-xl shadow-xl overflow-hidden card-hover group">
-                <img 
-                  src="/lovable-uploads/7f44aecc-6e7d-4efb-bd1b-ca5af9753aed.png" 
-                  alt="Bhavesh Shah - Founder of OM Traders"
-                  className="w-full h-full object-cover rounded-lg"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent rounded-lg flex flex-col justify-end p-6 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="text-white text-sm font-medium">Founder</span>
-                  <h3 className="text-white text-xl font-bold">Bhavesh Shah</h3>
-                  <p className="text-white/80 text-sm mt-2">Building packaging excellence since 1996</p>
+                <div className="w-full pt-[100%] sm:pt-[125%] relative"> {/* Enforce aspect ratio for mobile */}
+                  <img 
+                    src="/lovable-uploads/7f44aecc-6e7d-4efb-bd1b-ca5af9753aed.png" 
+                    alt="Bhavesh Shah - Founder of OM Traders"
+                    className="absolute inset-0 w-full h-full object-cover rounded-lg"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent rounded-lg flex flex-col justify-end p-6 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span className="text-white text-sm font-medium">Founder</span>
+                    <h3 className="text-white text-xl font-bold">Bhavesh Shah</h3>
+                    <p className="text-white/80 text-sm mt-2">Building packaging excellence since 1996</p>
+                    <p className="text-white/90 text-xs mt-1">Family Owned Business</p>
+                  </div>
                 </div>
               </div>
               
