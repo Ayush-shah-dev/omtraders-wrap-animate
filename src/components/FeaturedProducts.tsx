@@ -1,7 +1,7 @@
 
 import React, { useRef, useEffect } from 'react';
 import ProductCard from './ProductCard';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Star } from 'lucide-react';
 
 const FeaturedProducts = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -52,14 +52,41 @@ const FeaturedProducts = () => {
   ];
 
   return (
-    <section ref={sectionRef} id="featured-products" className="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50">
-      <div className="section-container">
+    <section
+      ref={sectionRef}
+      id="featured-products"
+      className="py-16 relative overflow-hidden"
+    >
+      {/* Background stylized elements */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-gray-50 to-white z-0"></div>
+      
+      {/* Animated decorative elements */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <div className="absolute top-1/4 left-0 w-32 h-32 bg-om-green/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-0 w-40 h-40 bg-om-blue/5 rounded-full blur-3xl"></div>
+        <div className="absolute left-1/2 transform -translate-x-1/2 top-0 w-full h-px bg-gradient-to-r from-transparent via-om-green/30 to-transparent"></div>
+      </div>
+      
+      {/* Connecting lines between sections */}
+      <div className="absolute left-1/2 transform -translate-x-1/2 top-0 w-1 h-24 bg-gradient-to-b from-transparent to-om-green/30"></div>
+      <div className="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-1 h-24 bg-gradient-to-t from-transparent to-om-blue/30"></div>
+
+      <div className="section-container relative z-10">
         <div className="text-center mb-12">
-          <span className="text-om-green font-medium text-lg">Our Speciality</span>
-          <h2 className="text-3xl md:text-4xl font-bold mt-2">
+          <div className="inline-flex items-center justify-center mb-3">
+            <div className="w-8 h-px bg-gradient-to-r from-transparent to-om-green"></div>
+            <span className="text-om-green font-medium text-lg mx-2 flex items-center">
+              <Star size={16} className="mr-1" /> Our Speciality
+            </span>
+            <div className="w-8 h-px bg-gradient-to-l from-transparent to-om-green"></div>
+          </div>
+          
+          <h2 className="text-3xl md:text-4xl font-bold mt-2 relative inline-block">
             Featured Products
+            <div className="absolute -bottom-2 left-0 h-1 w-full bg-gradient-to-r from-om-green to-om-blue opacity-70"></div>
           </h2>
-          <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
+          
+          <p className="mt-6 text-gray-600 max-w-2xl mx-auto">
             Explore our most sought-after packaging solutions that businesses across India trust for quality and reliability.
           </p>
         </div>
@@ -79,9 +106,10 @@ const FeaturedProducts = () => {
         </div>
         
         <div className="text-center mt-12">
-          <a href="#products" className="inline-flex items-center text-om-green-dark hover:text-om-green font-medium transition-colors duration-300">
-            View All Products
-            <ArrowRight className="ml-2 h-4 w-4" />
+          <a href="#products" className="group inline-flex items-center text-om-green-dark hover:text-om-green font-medium transition-colors duration-300 relative">
+            <span className="relative z-10">View All Products</span>
+            <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-om-green group-hover:w-full transition-all duration-300"></span>
           </a>
         </div>
       </div>

@@ -103,7 +103,7 @@
 
 @layer components {
   .animate-on-scroll {
-    @apply opacity-0;
+    @apply opacity-0 transition-all duration-700;
   }
   
   .animated {
@@ -111,18 +111,140 @@
   }
   
   .btn-primary {
-    @apply bg-om-green hover:bg-om-green-dark text-white font-semibold py-3 px-6 rounded-md transition-all duration-300 shadow-md hover:shadow-lg;
+    @apply bg-om-green hover:bg-om-green-dark text-white font-semibold py-3 px-6 rounded-md transition-all duration-300 shadow-md hover:shadow-lg relative overflow-hidden;
+  }
+  
+  .btn-primary::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-om-green-light/20 to-transparent opacity-0 transition-opacity duration-300;
+  }
+  
+  .btn-primary:hover::before {
+    @apply opacity-100;
   }
   
   .btn-outline {
-    @apply border-2 border-om-blue text-om-blue hover:bg-om-blue hover:text-white font-semibold py-3 px-6 rounded-md transition-all duration-300;
+    @apply border-2 border-om-blue text-om-blue hover:bg-om-blue hover:text-white font-semibold py-3 px-6 rounded-md transition-all duration-300 relative overflow-hidden;
+  }
+  
+  .btn-outline::after {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-om-blue-light/20 to-transparent opacity-0 transition-opacity duration-300;
+  }
+  
+  .btn-outline:hover::after {
+    @apply opacity-100;
   }
   
   .section-container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24;
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16;
   }
   
   .card-hover {
-    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-2;
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-2 relative;
   }
+  
+  .card-hover::before {
+    content: '';
+    @apply absolute -inset-0.5 bg-gradient-to-br from-om-green-light to-om-blue-light rounded-xl opacity-0 blur transition-all duration-300;
+    z-index: -1;
+  }
+  
+  .card-hover:hover::before {
+    @apply opacity-50;
+  }
+  
+  /* Futuristic design elements */
+  .glass-effect {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-lg;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-om-green to-om-blue bg-clip-text text-transparent;
+  }
+  
+  .section-divider {
+    height: 120px;
+    @apply w-full overflow-hidden relative -mt-16 -mb-16 z-10;
+  }
+  
+  .divider-wave {
+    @apply absolute w-[200%] h-full;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='%23ffffff'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+/* Additional animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 0.8; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Modified animations with reduced duration for better user experience */
+.animate-fade-in {
+  animation: fadeIn 0.7s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.7s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.7s ease-out forwards;
+}
+
+.animate-zoom-in {
+  animation: zoomIn 0.7s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.parallax {
+  will-change: transform;
+  transform: translateZ(0);
 }
