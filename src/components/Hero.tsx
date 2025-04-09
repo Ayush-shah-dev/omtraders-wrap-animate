@@ -61,13 +61,13 @@ const Hero = () => {
       </div>
       
       <div className="section-container relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+         
           <div className="hero-animate">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold  ">
               <span className="block">Premium Packaging</span>
               <span className="block text-gradient">Material Solutions</span>
             </h1>
-            <p className="mt-6 text-lg text-gray-600 max-w-lg">
+            <p className="mt-6 text-lg text-gray-600 max-w-full">
               OM Traders provides high-quality B2B packaging materials including POF shrink film, 
               BOPP adhesive tapes, box strapping rolls, and more for businesses across India.
             </p>
@@ -97,7 +97,7 @@ const Hero = () => {
                   <Shield size={20} />
                 </div>
                 <p className="text-sm font-medium text-gray-700">25+ Years Experience</p>
-              </div>
+              
             </div>
             
             <div className="mt-8 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
@@ -114,37 +114,14 @@ const Hero = () => {
           <div className="hero-animate">
             <div className="relative w-full max-w-md mx-auto">
               {/* Circular gradient background */}
-              <div className="parallax-layer absolute -inset-4 bg-gradient-to-br from-om-green-light/30 to-om-blue-light/30 rounded-full blur-3xl transform -translate-x-4 translate-y-4" data-speed-x="-0.03" data-speed-y="0.02"></div>
-              
+               
               {/* Animated gradient border */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-om-green via-om-blue to-om-green-light rounded-xl opacity-70 blur-sm group-hover:opacity-100"></div>
-              
+               
               {/* Founder's image */}
-              <div className="relative bg-white p-2 rounded-xl shadow-xl overflow-hidden card-hover group">
-                <div className="w-full pt-[100%] sm:pt-[125%] relative"> {/* Enforce aspect ratio for mobile */}
-                  <img 
-                    src="/lovable-uploads/7f44aecc-6e7d-4efb-bd1b-ca5af9753aed.png" 
-                    alt="Bhavesh Shah - Founder of OM Traders"
-                    className="absolute inset-0 w-full h-full object-cover rounded-lg"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent rounded-lg flex flex-col justify-end p-6 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <span className="text-white text-sm font-medium">Founder</span>
-                    <h3 className="text-white text-xl font-bold">Bhavesh Shah</h3>
-                    <p className="text-white/80 text-sm mt-2">Building packaging excellence since 1996</p>
-                    <p className="text-white/90 text-xs mt-1">Family Owned Business</p>
-                  </div>
-                </div>
-              </div>
-              
+               
               {/* Decorative elements */}
-              <div className="absolute top-1/2 -right-8 transform -translate-y-1/2 w-16 h-16">
-                <div className="absolute inset-0 bg-om-green/20 rounded-full animate-pulse"></div>
-                <div className="absolute inset-2 bg-om-green/40 rounded-full"></div>
-              </div>
-              <div className="absolute top-1/4 -left-4 transform -translate-y-1/2 w-8 h-8">
-                <div className="absolute inset-0 bg-om-blue/20 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
-                <div className="absolute inset-2 bg-om-blue/40 rounded-full"></div>
-              </div>
+              
+               
             </div>
           </div>
         </div>
