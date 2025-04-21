@@ -61,7 +61,14 @@ const Contact = () => {
                 <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
                   <div className="text-center px-4">
                     <MapPin className="h-10 w-10 text-om-green mx-auto mb-2" />
-                    <p className="font-medium">City Centre, F-35, Idgah Circle</p>
+                    <a 
+                      href="https://maps.app.goo.gl/ivLJ8UZ3vdX8L4Y9A"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-medium text-om-green hover:underline block"
+                    >
+                      City Centre, F-35, Idgah Circle
+                    </a>
                     <p>Near Idgah Police Chowky, Prem Darwaza</p>
                     <p>Saraspur, Ahmedabad, Gujarat 380016</p>
                   </div>
@@ -191,3 +198,4 @@ const Contact = () => {
 };
 
 export default Contact;
+
