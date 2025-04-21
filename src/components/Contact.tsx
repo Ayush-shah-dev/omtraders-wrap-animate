@@ -1,6 +1,7 @@
-
 import React, { useRef, useEffect } from 'react';
 import { Phone, Mail, MapPin, Instagram, Linkedin } from 'lucide-react';
+
+const MAP_LINK = "https://maps.app.goo.gl/ivLJ8UZ3vdX8L4Y9A";
 
 const Contact = () => {
   const mapRef = useRef<HTMLDivElement>(null);
@@ -57,27 +58,27 @@ const Contact = () => {
           <div ref={mapRef} className="animate-on-scroll">
             <div className="bg-white rounded-xl shadow-md overflow-hidden">
               <div className="relative h-64 bg-gray-200">
-                {/* Embed map iframe here */}
-                <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
+                <a
+                  href={MAP_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute inset-0 bg-gradient-to-br from-om-green/5 to-om-blue/10 flex items-center justify-center hover:scale-[1.02] transition-transform group"
+                  style={{ zIndex: 2, textDecoration: "none" }}
+                  aria-label="View on Google Maps"
+                >
                   <div className="text-center px-4">
-                    <MapPin className="h-10 w-10 text-om-green mx-auto mb-2" />
-                    <a 
-                      href="https://maps.app.goo.gl/ivLJ8UZ3vdX8L4Y9A"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-medium text-om-green hover:underline block"
-                    >
+                    <MapPin className="h-10 w-10 text-om-green animate-bounce mx-auto mb-2" />
+                    <span className="block font-bold text-lg text-om-green group-hover:underline">
                       City Centre, F-35, Idgah Circle
-                    </a>
-                    <p>Near Idgah Police Chowky, Prem Darwaza</p>
-                    <p>Saraspur, Ahmedabad, Gujarat 380016</p>
+                    </span>
+                    <p className="text-xs sm:text-base">Near Idgah Police Chowky, Prem Darwaza</p>
+                    <p className="text-xs sm:text-base">Saraspur, Ahmedabad, Gujarat 380016</p>
+                    <span className="mt-2 block underline text-xs text-om-blue">Open in Google Maps</span>
                   </div>
-                </div>
+                </a>
               </div>
-              
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-4">Contact Information</h3>
-                
                 <div className="space-y-4">
                   <div className="flex items-center">
                     <Phone className="h-5 w-5 text-om-green mr-3" />
@@ -85,7 +86,6 @@ const Contact = () => {
                       +91 9574516060
                     </a>
                   </div>
-                  
                   <div className="flex items-center">
                     <Mail className="h-5 w-5 text-om-green mr-3" />
                     <a href="mailto:omtraders2012@gmail.com" className="text-gray-700 hover:text-om-green">
@@ -93,12 +93,10 @@ const Contact = () => {
                     </a>
                   </div>
                 </div>
-                
                 <div className="mt-6 pt-6 border-t border-gray-100">
                   <h4 className="text-sm font-medium text-gray-500 uppercase mb-3">
                     Follow Us
                   </h4>
-                  
                   <div className="flex space-x-4">
                     <a 
                       href="https://www.instagram.com/omtraders_shrinkfilms/" 
@@ -108,7 +106,6 @@ const Contact = () => {
                     >
                       <Instagram className="h-5 w-5" />
                     </a>
-                    
                     <a 
                       href="https://www.linkedin.com/company/om-traders1996" 
                       target="_blank" 
@@ -198,4 +195,3 @@ const Contact = () => {
 };
 
 export default Contact;
-
