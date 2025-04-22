@@ -6,7 +6,7 @@ export default function POFPage() {
   const applications = [
     {
       title: "Food Packaging",
-      description: "Display and packaging of food products",
+      description: "Display/packaging of food products with excellent clarity",
       image: "/lovable-uploads/4a8d71b5-2c50-4bba-baf7-1c5fd9415a10.png"
     },
     {
@@ -36,18 +36,14 @@ export default function POFPage() {
               <table className="w-full text-center border-collapse bg-om-blue/10 rounded">
                 <thead>
                   <tr className="bg-om-blue text-white">
-                    <th className="p-2">Thickness (mic/gauge)</th>
-                    <th className="p-2">15/60</th>
-                    <th className="p-2">19/80</th>
-                    <th className="p-2">25/100</th>
+                    <th className="p-2">Width (inch)</th>
+                    <th className="p-2">Available Sizes</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td className="font-semibold">Meter</td>
-                    <td>1332</td>
-                    <td>1067</td>
-                    <td>800</td>
+                    <td className="font-semibold p-2">Width Range</td>
+                    <td className="p-2">4 - 30 inch</td>
                   </tr>
                 </tbody>
               </table>

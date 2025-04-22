@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { ArrowRight, Sparkles, Zap, Globe, Shield } from 'lucide-react';
 
@@ -63,7 +62,7 @@ const Hero = () => {
       <div className="section-container relative z-10">
          
           <div className="hero-animate">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold  ">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
               <span className="block">Premium Packaging</span>
               <span className="block text-gradient">Material Solutions</span>
             </h1>
@@ -97,7 +96,7 @@ const Hero = () => {
                   <Shield size={20} />
                 </div>
                 <p className="text-sm font-medium text-gray-700">25+ Years Experience</p>
-              
+              </div>
             </div>
             
             <div className="mt-8 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
@@ -110,29 +109,13 @@ const Hero = () => {
               </a>
             </div>
           </div>
-          
-          <div className="hero-animate">
-            <div className="relative w-full max-w-md mx-auto">
-              {/* Circular gradient background */}
-               
-              {/* Animated gradient border */}
-               
-              {/* Founder's image */}
-               
-              {/* Decorative elements */}
-              
-               
-            </div>
-          </div>
-        </div>
       </div>
       
-      {/* Scroll indicator with improved styling */}
+      {/* Scroll indicator */}
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-float">
         <span className="text-sm text-gray-600 mb-2 font-medium">Scroll Down</span>
         <div className="w-8 h-12 border-2 border-gray-400 rounded-full flex justify-center relative">
           <div className="w-2 h-2 bg-om-green rounded-full mt-2 animate-float" style={{animationDuration: '1.5s'}}></div>
-          {/* Animated glow effect */}
           <div className="absolute w-2 h-2 bg-om-green rounded-full mt-2 blur-sm animate-pulse-ring opacity-70"></div>
         </div>
       </div>
