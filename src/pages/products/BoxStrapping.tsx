@@ -1,7 +1,21 @@
 
 import React from "react";
 const whatsappUrl = (product: string) => `https://wa.me/919574516060?text=${encodeURIComponent(`Hi, I am interested in ${product}, Please give us quote`)}`;
+
 export default function BoxStrappingPage() {
+  const applications = [
+    {
+      title: "Industrial Packaging",
+      description: "Securing heavy machinery, tools for transport, binding pipes/bricks/tiles",
+      image: "/lovable-uploads/4d32cb8b-d506-4559-9e2c-38946f066486.png"
+    },
+    {
+      title: "Logistics & Warehousing",
+      description: "Strapping pallets for storage, stabilizing cargo in transit",
+      image: "/lovable-uploads/7f44aecc-6e7d-4efb-bd1b-ca5af9753aed.png"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-gray-50 to-om-blue/10 p-4 md:p-12 animate-fade-in">
       <div className="max-w-5xl mx-auto rounded-lg shadow-2xl bg-white/70 backdrop-blur-2xl p-6 md:p-10">
@@ -28,21 +42,21 @@ export default function BoxStrappingPage() {
             </a>
           </div>
         </div>
-        <div className="mt-10 grid gap-8 md:grid-cols-2">
-          <div>
-            <h2 className="text-xl font-bold mb-2 text-om-blue">Applications</h2>
-            <ol className="list-decimal ml-5 space-y-2">
-              <li>Industrial Packaging: Securing heavy machinery, tools for transport, binding pipes/bricks/tiles.</li>
-              <li>Logistics & Warehousing: Strapping pallets for storage, stabilizing cargo in transit.</li>
-              <li>Retail/E-commerce: Securing cartons for delivery, bulk display.</li>
-            </ol>
-          </div>
-          <div>
-            <h2 className="text-xl font-bold mb-2 text-om-blue">Video: Application</h2>
-            <ol className="list-decimal ml-5 space-y-2">
-              <li>Agriculture & Food: Binding produce bags/crates, strapping cartons.</li>
-              <li>Construction & Hardware: Securing rods/cables/lumber, bundling hardware tools.</li>
-            </ol>
+
+        <div className="mt-10">
+          <h2 className="text-2xl font-bold mb-6 text-om-blue">Applications</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            {applications.map((app, index) => (
+              <div key={index} className="bg-white/50 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <img 
+                  src={app.image} 
+                  alt={app.title} 
+                  className="w-full h-48 object-cover rounded-lg mb-4"
+                />
+                <h3 className="text-xl font-semibold text-om-green mb-2">{app.title}</h3>
+                <p className="text-gray-600">{app.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

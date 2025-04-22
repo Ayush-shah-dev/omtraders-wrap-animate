@@ -1,7 +1,21 @@
 
 import React from "react";
 const whatsappUrl = (product: string) => `https://wa.me/919574516060?text=${encodeURIComponent(`Hi, I am interested in ${product}, Please give us quote`)}`;
+
 export default function PVCPage() {
+  const applications = [
+    {
+      title: "Food Packaging",
+      description: "Display/packaging of food products with excellent clarity",
+      image: "/lovable-uploads/eddaf6fe-b903-46aa-86c4-e3d9fa73c907.png"
+    },
+    {
+      title: "Retail/E-commerce",
+      description: "Secure products for delivery & display, bulk shipping",
+      image: "/lovable-uploads/4a8d71b5-2c50-4bba-baf7-1c5fd9415a10.png"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-gray-50 to-om-blue/10 p-4 md:p-12 animate-fade-in">
       <div className="max-w-5xl mx-auto rounded-lg shadow-2xl bg-white/70 backdrop-blur-2xl p-6 md:p-10">
@@ -28,21 +42,21 @@ export default function PVCPage() {
             </a>
           </div>
         </div>
-        <div className="mt-10 grid gap-8 md:grid-cols-2">
-          <div>
-            <h2 className="text-xl font-bold mb-2 text-om-blue">Applications</h2>
-            <ol className="list-decimal ml-5 space-y-2">
-              <li>Food Packaging: Display/packaging of food products.</li>
-              <li>Retail/E-commerce: Secure products for delivery & display, bulk shipping.</li>
-              <li>Industrial: Dust/moisture tamper protection for merchandising.</li>
-            </ol>
-          </div>
-          <div>
-            <h2 className="text-xl font-bold mb-2 text-om-blue">Video: Application</h2>
-            <ol className="list-decimal ml-5 space-y-2">
-              <li>Promo goods: Secure gift packaging, event bundles.</li>
-              <li>Appliances/Electronics: Safe, professional wrapping.</li>
-            </ol>
+
+        <div className="mt-10">
+          <h2 className="text-2xl font-bold mb-6 text-om-blue">Applications</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            {applications.map((app, index) => (
+              <div key={index} className="bg-white/50 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <img 
+                  src={app.image} 
+                  alt={app.title} 
+                  className="w-full h-48 object-cover rounded-lg mb-4"
+                />
+                <h3 className="text-xl font-semibold text-om-green mb-2">{app.title}</h3>
+                <p className="text-gray-600">{app.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

@@ -1,7 +1,21 @@
 
 import React from "react";
 const whatsappUrl = (product: string) => `https://wa.me/919574516060?text=${encodeURIComponent(`Hi, I am interested in ${product}, Please give us quote`)}`;
+
 export default function BOPPPage() {
+  const applications = [
+    {
+      title: "Packaging & Shipping",
+      description: "Sealing cartons and boxes for transportation, e-commerce and logistics",
+      image: "/lovable-uploads/3e12cd79-e852-4cc5-b080-929b9878c9df.png"
+    },
+    {
+      title: "Industrial Use",
+      description: "Bundling lightweight products, securing pallets and components",
+      image: "/lovable-uploads/4a8d71b5-2c50-4bba-baf7-1c5fd9415a10.png"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-gray-50 to-om-blue/10 p-4 md:p-12 animate-fade-in">
       <div className="max-w-5xl mx-auto rounded-lg shadow-2xl bg-white/70 backdrop-blur-2xl p-6 md:p-10">
@@ -46,31 +60,21 @@ export default function BOPPPage() {
             </a>
           </div>
         </div>
-        <div className="mt-10 grid gap-8 md:grid-cols-2">
-          <div>
-            <h2 className="text-xl font-bold mb-2 text-om-blue">Applications</h2>
-            <ol className="list-decimal ml-5 space-y-2">
-              <li>
-                <b>Branding and Marketing</b>
-                <p>Promotes brand visibility with logos or slogans. Enhances professional appearance for retail and e-commerce shipments.</p>
-              </li>
-              <li>
-                <b>Security and Tamper Evidence</b>
-                <p>Provides tamper-proof sealing with custom messages. Helps identify tampered packages during transit.</p>
-              </li>
-              <li>
-                <b>Organizational Use</b>
-                <p>Differentiates product categories with color/labeled tapes. Marks specific inventory for easy identification.</p>
-              </li>
-            </ol>
-          </div>
-          <div>
-            <h2 className="text-xl font-bold mb-2 text-om-blue">Video: Application</h2>
-            <ol className="list-decimal ml-5 space-y-2">
-              <li><b>Packaging & Shipping:</b> Sealing cartons and boxes for transportation, e-commerce and logistics.</li>
-              <li><b>Industrial Use:</b> Bundling lightweight products, securing pallets and components.</li>
-              <li><b>Retail & Office:</b> General-purpose sealing for office, packaging and stationery.</li>
-            </ol>
+
+        <div className="mt-10">
+          <h2 className="text-2xl font-bold mb-6 text-om-blue">Applications</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            {applications.map((app, index) => (
+              <div key={index} className="bg-white/50 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow">
+                <img 
+                  src={app.image} 
+                  alt={app.title} 
+                  className="w-full h-48 object-cover rounded-lg mb-4"
+                />
+                <h3 className="text-xl font-semibold text-om-green mb-2">{app.title}</h3>
+                <p className="text-gray-600">{app.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
